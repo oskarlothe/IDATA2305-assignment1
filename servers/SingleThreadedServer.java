@@ -39,7 +39,6 @@ public class SingleThreadedServer implements Runnable {
                 isStopped = true;
             }
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         System.out.println("Server Stopped.");

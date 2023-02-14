@@ -1,7 +1,14 @@
 package utils;
 
+
+/**
+ * Generates html responses
+ * 
+ * @author Christian Rø
+ * @author Oscar Lothe
+ */
 public class ResponseGenerator {
-  public static String generatorResponseHTML(long time1, long time2) {
+  public static String generatorResponseHTML(String serverText, long time1, long time2) {
     return ("<html><body>" +
         "Singlethreaded Server: " +
         time1 + " - " + time2 +
