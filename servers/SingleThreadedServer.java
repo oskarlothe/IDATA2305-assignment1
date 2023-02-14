@@ -9,6 +9,13 @@ import javax.sound.sampled.SourceDataLine;
 
 import computation.SearchSimulator;
 
+/**
+ * Handles the SingleThreaded server
+ * 
+ * @author Christian Rø
+ * @author Oscar Lothe
+ */
+
 public class SingleThreadedServer implements Runnable {
 
     protected int serverPort = 8080;
@@ -27,16 +34,16 @@ public class SingleThreadedServer implements Runnable {
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("Client connected");
                 SearchSimulator simulator = new SearchSimulator();
-                simulator.processClientRequest(clientSocket);
+                simulator.processClientRequest(clientSocket, "Singlethreaded Server: ");
                 clientSocket.close();
                 isStopped = true;
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
         System.out.println("Server Stopped.");
-    
+
     }
 
     private synchronized boolean isStopped() {
